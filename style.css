@@ -1,5 +1,4 @@
 html {
-    box-sizing: border-box;
     margin: 0;
     font-size: 16px;
 }
@@ -10,7 +9,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
     font-family: 'Space Grotesk', sans-serif;
+    background-color: rgb(252, 249, 249);
 }
 
 main {
@@ -18,8 +19,7 @@ main {
     flex-direction: column;
     align-items: center;
     width: 23rem;
-    min-height: 60rem;
-    background-color: rgb(247, 247, 247);  
+    background-color: hsl(0, 0%, 100%);  
 }
 
 .bg-card-img {
@@ -32,38 +32,40 @@ main {
     color: white;
 }
 
-.card-back, .card-front {
-    width: 78%;
+.card-back, .card-front, .card-cvc, .card-logo, .card-line-a, .card-line-b {
     position: absolute;
 }
 
 .card-back {
-    top: 7%;
+    top: 10%;
     left: 18%;
+    width: 78%;
 }
 
 .card-front {
-    top: 44%;
+    top: 47%;
     left: 4%;
+    width: 75%;
+    box-shadow: 0 3rem .5rem -.2rem rgba(236, 236, 236, 0.253);
 }
 
 .card-cvc {
-    position: absolute;
-    top: 28%;
-    left: 70%;
+    top: 36%;
+    left: 79%;
+    font-size: .6rem;
 }
 
 .card-logo {
-    position: absolute;
-    top: 50%;
+    top: 52%;
     left: 8%;
     width: 13%;
 }
 
 .card-line-a {
-    position: absolute;
-    top: 65%;
+    top: 75%;
     left: 10%;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
 .card-num {
@@ -72,13 +74,14 @@ main {
 }
 
 .card-line-b {
-    position: absolute;
-    top: 80%;
+    top: 93%;
     left: 10%;
+    font-size: .6rem;
+    font-weight: bold;
 }
 
 .card-name {
-    margin-right: 15px;
+    margin-right: 8rem;
 }
 
 #form {
@@ -114,15 +117,21 @@ input[type="number"] {
     width: 100%;
 }
 
-.input-month, .input-year {
-    width: 20%;
+.card-sec {
+    width: 100%;
 }
 
-.input-cvc {
-    width: 50%;
+.security-label {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    column-gap: 1.2rem;
 }
 
-
+.security-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2.5fr;
+    column-gap: .8rem;
+}
 
 #form button {
     width: 100%;
@@ -133,5 +142,5 @@ input[type="number"] {
     color: white;
     font-size: .9rem;
     font-weight: bold;
-    margin-top: 10px;
+    margin: 1rem 0 2.5rem 0;
 }
