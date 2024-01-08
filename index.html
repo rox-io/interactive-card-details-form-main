@@ -20,17 +20,19 @@
 </head>
 <body>
 <main>
-  <div id="card-container">
-    <div id="img-layer">
-      <img class="bg-card-img" src="images/bg-main-mobile.png" alt="">
-      <img class="card-back" src="images/bg-card-back.png" alt="">
-      <img class="card-front" src="images/bg-card-front.png" alt="">
+  <div id="card-main">
+    <img class="bg-main-mobile" src="images/bg-main-mobile.png" alt="">
+    <img class="bg-main-desktop" src="images/bg-main-desktop.png" alt="">
+    <div id="card-front">
+      <img class="card-front-img" src="images/bg-card-front.png" alt="">
+      <img class=" absolute-pos-img card-logo" src="images/card-logo.svg" alt="front view of purple gradient color bank card sample">
+      <span class="card-num">0000 0000 0000 0000</span>
+      <span class="card-name">JANE APPLESEED</span>
+      <span class="card-exp">00/00</span>
     </div>
-    <div id="card-info-layer">
-      <p class="card-cvc">000</p>
-      <img class="card-logo" src="images/card-logo.svg" alt="">
-      <p class="card-line-a"><span class="card-num">0000</span><span class="card-num">0000</span><span class="card-num">0000</span><span class="card-num">0000</span></p>
-      <p class="card-line-b"><span class="card-name">JANE APPLESEED</span><span class="card-exp">00/00</span></p>
+    <div id="card-back">
+      <img class="card-back-img" src="images/bg-card-back.png" alt="">
+      <span class="card-cvc">000</span>
     </div>
   </div>
   <div id="form">
@@ -52,11 +54,11 @@
       <button type="submit">Confirm</button>
     </form>
   </div>
-  <div id="completed-form" class="toggle-completed-form" style="display: none;">
+  <div id="completed-form" class="toggle-completed-form">
     <img src="images/icon-complete.svg" alt="checkmark icon">
     <p class="card-message-one">Thank You!</p>
     <p class="card-message-two">We've added your card details</p>
-    <p><button>Continue</button></p>
+    <button>Continue</button>
   </div>
 </main>
 <footer class="attribution">

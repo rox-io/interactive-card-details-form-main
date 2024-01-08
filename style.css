@@ -1,15 +1,9 @@
-html {
-    margin: 0;
-    font-size: 16px;
+* {
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
     font-family: 'Space Grotesk', sans-serif;
     background-color: rgb(252, 249, 249);
 }
@@ -18,98 +12,179 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 23rem;
-    background-color: hsl(0, 0%, 100%);  
+    justify-content: space-between;
+    background-color: hsl(0, 0%, 100%);
+
 }
 
-.bg-card-img {
-    width: 100%;
+/*@media (min-width: 700px) {
+    main {
+        flex-direction: row;
+        justify-content: flex-start;
+        border: 5px solid aquamarine;
+        width: min-content;
+    }
+}*/
+
+img {
+    display: block;
+    max-width: 100%;
 }
 
-#card-container {
+
+#card-main {
+    color: white; 
     position: relative;
-    margin-bottom: 5rem;
-    color: white;
+    max-width: 375px;
+    margin-bottom: 6em;
 }
 
-.card-back, .card-front, .card-cvc, .card-logo, .card-line-a, .card-line-b {
+/*@media (min-width: 700px) {
+    #card-main {
+        border: 5px solid salmon;
+        width: min-content;
+    }
+}*/
+
+#card-front {
+    z-index: 2;
+    top: 51%;
+    left: 5%;
+}
+
+/*@media (min-width: 700px) {
+    #card-front {
+
+    }
+}*/
+
+#card-back {
+    top: 12%;
+    right: 5%;
+}
+
+/*@media (min-width: 700px) {
+    #card-back {
+
+    }
+}*/
+
+#card-front, #card-back {
+    position: absolute;
+    width: 80%;
+
+}
+
+#card-front span, 
+#card-front .absolute-pos-img, 
+#card-back span {
     position: absolute;
 }
 
-.card-back {
-    top: 10%;
-    left: 18%;
-    width: 78%;
+
+.card-front-img {
+    box-shadow: 0 3rem 2rem .4rem rgba(219, 219, 219, 0.541);
 }
 
-.card-front {
-    top: 47%;
-    left: 4%;
-    width: 75%;
-    box-shadow: 0 3rem .5rem -.2rem rgba(236, 236, 236, 0.253);
+/*@media (min-width: 700px) {
+    .card-front-img {
+        max-width: revert;
+    }
 }
 
-.card-cvc {
-    top: 36%;
-    left: 79%;
-    font-size: .6rem;
+@media (min-width: 700px) {
+    .bg-main-mobile {
+        display: none;
+    }
+}*/
+
+.bg-main-desktop {
+    display: none;
 }
+
+/*@media (min-width: 700px) {
+    .bg-main-desktop {
+        display: block;
+        max-width: revert;
+    }
+}*/
 
 .card-logo {
-    top: 52%;
-    left: 8%;
-    width: 13%;
-}
-
-.card-line-a {
-    top: 75%;
-    left: 10%;
-    letter-spacing: 2px;
-    font-weight: bold;
+    width: 18%;
+    top: 1.5rem;
+    left: 1.5rem;
 }
 
 .card-num {
-    display: inline;
-    margin-right: 10px;
-}
-
-.card-line-b {
-    top: 93%;
-    left: 10%;
-    font-size: .6rem;
-    font-weight: bold;
+    top: 53%;
+    left: 1.5rem;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
 }
 
 .card-name {
-    margin-right: 8rem;
+    bottom: 1.5rem;
+    left: 1.5rem;
 }
 
-#form {
-    width: 20rem;
+.card-name, .card-exp, .card-cvc {
+    font-size: .5rem;
+    letter-spacing: 1.5px;
 }
+
+.card-exp {
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+.card-cvc {
+    top: 46%;
+    right: 2rem;
+}
+
+
+#form {
+    display: flex;
+    align-items: flex-end;
+    max-width: 20rem;
+}
+
+/*@media (min-width: 700px) {
+    #form {
+        justify-content: center;
+        padding: 0 10rem;
+        border: 5px solid black;
+        min-width: 20rem;
+    }
+}*/
 
 #form label {
     text-transform: uppercase;
     font-size: .7rem;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: rgba(0, 0, 0, 0.74);
 }
 
 #form input {
     border: 1px solid rgb(221, 221, 221);
     border-radius: 7px;
-    padding: 10px 5px;
+    padding: 10px 10px;
     margin: 5px 0 15px 0;
-    box-sizing: border-box;
     font-size: .9rem;
-    font-weight: bold;
+    font-weight: 500;
     letter-spacing: .9px;
     color: rgba(128, 128, 128, 0.603);
 }
 
 input[type="number"] {
     appearance: textfield;
+}
+
+input::placeholder {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    opacity: .5;
 }
 
 .info-input {
@@ -134,13 +209,35 @@ input[type="number"] {
 }
 
 #form button {
-    width: 100%;
+    width: 20rem;
     padding: 15px 5px;
     background-color: hsl(278, 68%, 11%);
     border-style: none;
     border-radius: 5px;
     color: white;
-    font-size: .9rem;
+    font-size: 1rem;
     font-weight: bold;
     margin: 1rem 0 2.5rem 0;
+    letter-spacing: 1px;
+}
+
+#completed-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    display: none;
+
+}
+
+#completed-form button {
+    padding: 15px 15px;
+    font-size: 1rem;
+    background-color: hsl(278, 68%, 11%);
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
